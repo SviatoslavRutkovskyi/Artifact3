@@ -14,20 +14,20 @@ function createRhombus(pHeight, pColorEven, pColorOdd, pSymbol, pPattern) {
 }
 
 function upRight(pHeight, pColorEven, pColorOdd, pSymbol, pPattern) {
+    var colorEven = pColorEven;
+    var colorOdd = pColorOdd;
     var rLine = "";
     for (i = 0; i < pHeight; i++) {
         rLine += "<p>";
         //Create each line on the Rhombus
         if (pPattern == "false") {
             if (i % 2) {
-                var temp = pColorEven;
-                pColorEven = pColorOdd;
-                pColorOdd = temp;
+                colorEven = pColorOdd;
+                colorOdd = pColorEven;
             }
             else {
-                var temp = pColorEven;
-                pColorEven = pColorOdd;
-                pColorOdd = temp;
+                colorEven = pColorEven;
+                colorOdd = pColorOdd;
             }
         }
         for (j = 0; j <= i; j++) {
@@ -35,10 +35,12 @@ function upRight(pHeight, pColorEven, pColorOdd, pSymbol, pPattern) {
             //Is the position even or odd so we change the color
             if (j % 2)
                 //even
-                rLine += "<span style='color:" + pColorEven + ";'>" + pSymbol + "</span>";
+                rLine += "<span style='color:" + colorEven + ";'>" + pSymbol + "</span>";
+                
             else
                 //odd
-                rLine += "<span style='color:" + pColorOdd + ";'>" + pSymbol + "</span>";
+                rLine += "<span style='color:" + colorOdd + ";'>" + pSymbol + "</span>";
+                
 
         }
         rLine += "</p>";
@@ -49,6 +51,8 @@ function upRight(pHeight, pColorEven, pColorOdd, pSymbol, pPattern) {
     document.getElementById("upRight").innerHTML = rLine;
 }
 function upLeft(pHeight, pColorEven, pColorOdd, pSymbol, pPattern) {
+    var colorEven = pColorEven;
+    var colorOdd = pColorOdd;
     var rLine = "";
     for (i = 0; i < pHeight; i++) {
         rLine += "<p>";
@@ -58,14 +62,12 @@ function upLeft(pHeight, pColorEven, pColorOdd, pSymbol, pPattern) {
         }
         if (pPattern == "true") {
             if (i % 2) {
-                var temp = pColorEven;
-                pColorEven = pColorOdd;
-                pColorOdd = temp;
+                colorEven = pColorOdd;
+                colorOdd = pColorEven;
             }
             else {
-                var temp = pColorEven;
-                pColorEven = pColorOdd;
-                pColorOdd = temp;
+                colorEven = pColorEven;
+                colorOdd = pColorOdd;
             }
         }
         
@@ -74,10 +76,10 @@ function upLeft(pHeight, pColorEven, pColorOdd, pSymbol, pPattern) {
             //Is the position even or odd so we change the color
             if (j % 2)
                 //even
-                rLine += "<span style='color:" + pColorEven + ";'>" + pSymbol + "</span>";
+                rLine += "<span style='color:" + colorEven + ";'>" + pSymbol + "</span>";
             else
                 //odd
-                rLine += "<span style='color:" + pColorOdd + ";'>" + pSymbol + "</span>";
+                rLine += "<span style='color:" + colorOdd + ";'>" + pSymbol + "</span>";
 
         }
         rLine += "<span style='color:#ffffff;'>" + pSymbol + "</span>";
@@ -90,20 +92,20 @@ function upLeft(pHeight, pColorEven, pColorOdd, pSymbol, pPattern) {
 }
 
 function downRight(pHeight, pColorEven, pColorOdd, pSymbol, pPattern) {
+    var colorEven = pColorEven;
+    var colorOdd = pColorOdd;
     var rLine = "";
     for (i = pHeight; i > 0; i--) {
         rLine += "<p>";
         //Create each line on the Rhombus
         if (pPattern == "false") {
             if (i % 2) {
-                var temp = pColorEven;
-                pColorEven = pColorOdd;
-                pColorOdd = temp;
+                colorEven = pColorOdd;
+                colorOdd = pColorEven;
             }
             else {
-                var temp = pColorEven;
-                pColorEven = pColorOdd;
-                pColorOdd = temp;
+                colorEven = pColorEven;
+                colorOdd = pColorOdd;
             }
         }
         for (j = 0; j < i; j++) {
@@ -111,10 +113,11 @@ function downRight(pHeight, pColorEven, pColorOdd, pSymbol, pPattern) {
             //Is the position even or odd so we change the color
             if (j % 2)
                 //even
-                rLine += "<span style='color:" + pColorOdd + ";'>" + pSymbol + "</span>";
+                
+                rLine += "<span style='color:" + colorOdd + ";'>" + pSymbol + "</span>";
             else
                 //odd
-                rLine += "<span style='color:" + pColorEven + ";'>" + pSymbol + "</span>";
+                rLine += "<span style='color:" + colorEven + ";'>" + pSymbol + "</span>";
 
         }
         rLine += "</p>";
@@ -125,6 +128,8 @@ function downRight(pHeight, pColorEven, pColorOdd, pSymbol, pPattern) {
     document.getElementById("downRight").innerHTML = rLine;
 }
 function downLeft(pHeight, pColorEven, pColorOdd, pSymbol, pPattern) {
+    var colorEven = pColorEven;
+    var colorOdd = pColorOdd;
     var rLine = "";
     for (i = pHeight; i > 0; i--) {
         rLine += "<p>";
@@ -134,25 +139,24 @@ function downLeft(pHeight, pColorEven, pColorOdd, pSymbol, pPattern) {
         }
         if (pPattern == "true") {
             if (i % 2) {
-                var temp = pColorEven;
-                pColorEven = pColorOdd;
-                pColorOdd = temp;
+                colorEven = pColorOdd;
+                colorOdd = pColorEven;
             }
             else {
-                var temp = pColorEven;
-                pColorEven = pColorOdd;
-                pColorOdd = temp;
+                colorEven = pColorEven;
+                colorOdd = pColorOdd;
             }
         }
         for (j = 0; j < i; j++) {
 
             //Is the position even or odd so we change the color
+
             if (j % 2)
                 //even
-                rLine += "<span style='color:" + pColorOdd + ";'>" + pSymbol + "</span>";
+                rLine += "<span style='color:" + colorEven + ";'>" + pSymbol + "</span>";
             else
                 //odd
-                rLine += "<span style='color:" + pColorEven + ";'>" + pSymbol + "</span>";
+                rLine += "<span style='color:" + colorOdd + ";'>" + pSymbol + "</span>";
 
         }
         rLine += "<span style='color:#ffffff;'>" + pSymbol + "</span>";
