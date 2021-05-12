@@ -25,6 +25,11 @@
         <option value="#660099">Purple</option>
     </select>
     <br>
+    <label>Choose color pattern for Phombus</label>
+    <select id="pattern">
+        <option value="true">Vertical</option>
+        <option value="false">Diagonal</option>
+    </select> <br>
     <label>Choose symbol for Rhombus</label>
     <select id="symbol">
         <option value="*">*</option>
@@ -35,10 +40,11 @@
     <button onclick="createRhombus(document.getElementById('rHeight').value,
 document.getElementById('colorEven').value,
 document.getElementById('colorOdd').value,
-document.getElementById('symbol').value);">
+document.getElementById('symbol').value,
+document.getElementById('pattern').value);">
         Display Rhombus
     </button>
-    <div id="upLeft">Rhombus</div>
+    <div id="upLeft"></div>
     <div id="upRight"></div>
 
     <div class="clear"></div>
@@ -46,6 +52,7 @@ document.getElementById('symbol').value);">
 
     <div id="downLeft"></div>
     <div id="downRight"></div>
+
 
     <!-- CALL YOUR JAVASCRIPT FILE IF YOU ARE USING A HOSTING ENVIRONMENT -->
 
